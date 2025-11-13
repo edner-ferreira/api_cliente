@@ -1,5 +1,7 @@
 import swaggerJSDoc from 'swagger-jsdoc'
 
+const serverUrl = process.env.BASE_URL || 'http://localhost:3000'
+
 const options = {
   definition: {
     openapi: '3.0.0',
@@ -9,7 +11,7 @@ const options = {
       description: 'Documentação da minha API - CRUD - DOCKER - SWAGGER - Node.js',
     },
     servers: [
-      { url: 'http://localhost:3000' }
+      { url: serverUrl }
     ],
   },
   apis: ['./routes/ClientesRoutes.js'],

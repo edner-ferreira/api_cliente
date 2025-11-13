@@ -12,6 +12,7 @@ app.use(express.json())
 
 const uri = process.env.MONGODB_URI
 const port = process.env.PORT || 3000
+const serverUrl = process.env.BASE_URL || 'http://localhost:'
 
 mongoose
   .connect(uri)
@@ -39,4 +40,4 @@ app.use((err, req, res, next) => {
   })
 })
 
-app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`))
+app.listen(port, () => console.log(`Servidor rodando em ${serverUrl}${port}`))
